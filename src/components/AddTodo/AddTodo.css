@@ -1,0 +1,30 @@
+.AddTodo{
+    text-align: center;
+    display: block;
+}
+
+.head{
+    font-style: italic;
+    font-size: 45px;
+    color: #EAD7D8
+}
+
+.todo_input{
+    padding: 16px 16px 16px 60px;
+    border: 0px solid;
+    background-color: white;
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.30);
+    font-style: italic;
+    font-size: 30px;
+    margin: 5px;
+    outline: none;
+}
+.my_button{
+    outline: none;
+    border-radius: 17px;
+    padding: 14px;
+    background-color: blanchedalmond;
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.30);
+    font-size: 25px;
+    font-weight: 800;
+}
