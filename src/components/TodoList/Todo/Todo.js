@@ -3,6 +3,7 @@ import React from 'react';
 import classes from './Todo.css';
 
 const Todo = (props) => {
+    
     let todo_class = [classes.todo_task] ;
     if (props.todo.completed == true){
         todo_class.push(classes.done_task);

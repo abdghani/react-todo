@@ -4,7 +4,8 @@ import classes from './TodoList.css';
 import Todo from './Todo/Todo';
 
 const TodoList = (props) => {
-
+    // console.log(props.todos);
+    
     let todo_list = props.todos.map( (_todo,_key) => {
        return  (
                 <Todo 

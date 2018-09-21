@@ -4,6 +4,8 @@ import React from 'react';
 import classes from './AddTodo.css';
 
 const AddTodo = (props) => {
+    // console.log(props.todo);
+    
     return (
         <div className={classes.AddTodo}>
             <p className={classes.head}>
