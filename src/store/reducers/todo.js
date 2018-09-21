@@ -1,24 +1,21 @@
 import * as ACTION from '../actions';
 
+const setTodoLocalStorage = (todos) =>  {
+    localStorage.setItem('todos' ,JSON.stringify(todos))
+}
+const getTodoLocalStorage = () => {
+    let items = localStorage.getItem('todos');
+    if (items == null){
+        return []
+    }else{
+        return JSON.parse(items) 
+    }
+}
+// console.log();
+
+
 const initialState = {
-    todos : [
-        {
-            'task': 'learn react the easy way',
-            'completed': true
-        },
-        {
-            'task': 'Improved react code',
-            'completed': true
-        },
-        {
-            'task': 'Learn redux',
-            'completed': true
-        },
-        {
-            'task': 'Implement Redux',
-            'completed': false
-        }
-    ],
+    todos :getTodoLocalStorage(),
     newTodo : ""
 }
 
@@ -31,6 +28,7 @@ const reducer = (state= initialState, action) => {
                 }
                 return item;
             })
+            setTodoLocalStorage(newArr);
             return {
                 ...state,
                 todos: newArr
@@ -44,14 +42,15 @@ const reducer = (state= initialState, action) => {
             }
         }
         case ACTION.ADD_TODO:{
-            let _newsArray = [...state.todos];
-            _newsArray.push({
+            let _newArray = [...state.todos];
+            _newArray.push({
                 'task':state.newTodo,
                 'completed':false
             });
+            setTodoLocalStorage(_newArray)
             return {
                 ...state,
-                todos :_newsArray,
+                todos :_newArray,
                 newTodo : ''
             }
         }

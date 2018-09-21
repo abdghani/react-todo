@@ -18,7 +18,7 @@ class Todos extends Component{
                 <TodoList 
                     todos = {this.props.todos}
                     changeStatus = {(key) => this.props.changeStatus(key)}
-                    /> */}
+                    /> 
             </div>
         )
     }
