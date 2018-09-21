@@ -12,7 +12,8 @@ const TodoList = (props) => {
                 key = {_key}
                 unique_key = {_key}
                 todo={_todo}
-                changeStatus = {(event) => props.changeStatus(event,_key)}
+                changeStatus = {() => props.changeStatus(_key)}
+                deleteTodo = {(event) => props.deleteTodo(event,_key)}
                 > {_todo} </Todo>)
     })
     

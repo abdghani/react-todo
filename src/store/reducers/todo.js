@@ -54,6 +54,17 @@ const reducer = (state= initialState, action) => {
                 newTodo : ''
             }
         }
+        case ACTION.DELETE_TODO:{
+            let newArr = state.todos.filter((item,idx) => {
+                return idx != action.key
+            })
+            setTodoLocalStorage(newArr);
+            return {
+                ...state,
+                todos: newArr
+            }
+            break;
+        }
     }
     return state;
 }

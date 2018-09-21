@@ -18,6 +18,7 @@ class Todos extends Component{
                 <TodoList 
                     todos = {this.props.todos}
                     changeStatus = {(key) => this.props.changeStatus(key)}
+                    deleteTodo = {(key) => this.props.deleteTodo(key)}
                     /> 
             </div>
         )
@@ -35,7 +36,8 @@ const mapDispatchToProps = dispatch => {
     return {
         changeTodoContent: (new_val) => dispatch({type: ACTION.CHANGE_NEW_TODO, value: new_val }),
         addATodoHandler: () => dispatch({type: ACTION.ADD_TODO}),
-        changeStatus: (key) => dispatch({type: ACTION.CHANGE_STATUS, key: key})
+        changeStatus: (key) => dispatch({type: ACTION.CHANGE_STATUS, key: key}),
+        deleteTodo: (key) => dispatch({type: ACTION.DELETE_TODO, key: key})
     } 
 }
 
